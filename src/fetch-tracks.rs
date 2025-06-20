@@ -1,5 +1,3 @@
-
-
 use std::fs;
 use std::io;
 use sted::path::{Path, PathBuf};
@@ -21,4 +19,3 @@ impl Fetcher {
         fetching
     }
 }
-
