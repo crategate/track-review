@@ -1,4 +1,5 @@
 use clap::Parser;
+use scan_dir::ScanDir;
 use std::path::PathBuf;
 
 #[derive(Debug, Parser)]
@@ -11,5 +12,15 @@ fn main() {
     let cli = Cli::parse();
 
     let path = cli.path.unwrap_or(PathBuf::from("~/Music/INCOMING"));
+
+    println!("I found some incoming tracks for you to sort....");
     println!("{}", path.display());
+
+    ScanDir::dirs()
+        .read("~/Music", |iter| {
+            for (entry, name) in iter {
+                println!("{:?} -=-=-=- {:?}", name, entry.path());
+            }
+        })
+        .unwrap()
 }
