@@ -2,6 +2,8 @@ use clap::Parser;
 use scan_dir::ScanDir;
 use std::path::PathBuf;
 
+mod fetch;
+
 #[derive(Debug, Parser)]
 #[command(version, about, long_about = "Quickest Crates In the West")]
 struct Cli {
@@ -17,7 +19,7 @@ fn main() {
     println!("{}", path.display());
 
     ScanDir::dirs()
-        .read("~/Music", |iter| {
+        .read("..", |iter| {
             for (entry, name) in iter {
                 println!("{:?} -=-=-=- {:?}", name, entry.path());
             }
