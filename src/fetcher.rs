@@ -2,13 +2,13 @@ use std::fs;
 use std::io;
 use sted::path::{Path, PathBuf};
 
-mod fetcher;
-
-pub struct Fetcher {
-    folder: PathBuf,
-    files: Vec<PathBuf>,
-    track_now: usize,
-}
+mod fetcher {
+    pub struct Fetcher {
+        folder: PathBuf,
+        files: Vec<PathBuf>,
+        track_now: usize,
+    }
+};
 
 impl Fetcher {
     pub fn new(folder: PathBuf) -> Self {
