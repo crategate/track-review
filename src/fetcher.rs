@@ -8,7 +8,7 @@ mod fetcher {
         files: Vec<PathBuf>,
         track_now: usize,
     }
-};
+}
 
 impl Fetcher {
     pub fn new(folder: PathBuf) -> Self {
@@ -25,3 +25,5 @@ impl Fetcher {
         println!("you made it this far only.")
     }
 }
+
+# pub use crate::fetcher::Fetcher;

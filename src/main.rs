@@ -2,7 +2,7 @@ use clap::Parser;
 use scan_dir::ScanDir;
 use std::path::PathBuf;
 
-use crate::fetcher::Fetcher;
+use lib::Fetcher;
 
 #[derive(Debug, Parser)]
 #[command(version, about, long_about = "Quickest Crates In the West")]
